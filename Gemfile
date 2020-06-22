@@ -36,11 +36,17 @@ group :development do
 
   # Capistrano gems must been installed in each developer RubyGem.
   # For specific versions of Capistrano, uncomment and put the desired
-  gem 'capistrano'
+  gem "capistrano", "~> 3.7"
+  gem "capistrano-rails", "~> 1.2"
+  # gem "capistrano-passenger", "~> 0.2.0"
+  gem "capistrano-puma"
+  gem "capistrano-yarn"
+  #Add this if you"re using rbenv
+  gem "capistrano-rbenv", "~> 2.1"
 end
 
 # group :production do
 #   gem "passenger"
-#   gem 'delayed_job_active_record'
+#   gem "delayed_job_active_record"
 #   gem "daemons"
 # end
