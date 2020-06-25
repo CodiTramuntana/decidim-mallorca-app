@@ -20,6 +20,7 @@ gem "faker", "~> 1.9"
 
 # Keep environment secret variables secret
 gem "figaro"
+gem 'whenever', require: false
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
@@ -33,16 +34,6 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
-
-  # Capistrano gems must been installed in each developer RubyGem.
-  # For specific versions of Capistrano, uncomment and put the desired
-  gem "capistrano", "~> 3.7"
-  gem "capistrano-rails", "~> 1.2"
-  # gem "capistrano-passenger", "~> 0.2.0"
-  gem "capistrano-puma"
-  gem "capistrano-yarn"
-  #Add this if you"re using rbenv
-  gem "capistrano-rbenv", "~> 2.1"
 end
 
 # group :production do
