@@ -20,7 +20,7 @@ gem "faker", "~> 1.9"
 
 # Keep environment secret variables secret
 gem "figaro"
-# gem 'whenever', require: false
+# gem 'whenever', require: false  # esborram!!
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
