@@ -46,8 +46,8 @@ group :development do
   gem "capistrano-rbenv", "~> 2.1"
 end
 
-# group :production do
-#   gem "passenger"
-#   gem "delayed_job_active_record"
-#   gem "daemons"
-# end
+group :production do
+  gem "passenger"
+  gem "delayed_job_active_record"
+  gem "daemons"
+end
