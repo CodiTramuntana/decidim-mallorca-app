@@ -20,7 +20,6 @@ gem "faker", "~> 1.9"
 
 # Keep environment secret variables secret
 gem "figaro"
-gem "geocoder", ">= 1.6.3"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
