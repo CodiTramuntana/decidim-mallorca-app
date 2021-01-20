@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 # DECIDIM_VERSION = "0.21.0"
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.22-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.23-stable' }
 
 gem "decidim", DECIDIM_VERSION
 # gem "decidim-consultations", DECIDIM_VERSION
@@ -20,7 +20,6 @@ gem "faker", "~> 1.9"
 
 # Keep environment secret variables secret
 gem "figaro"
-gem "geocoder", ">= 1.6.3"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
