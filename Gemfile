@@ -9,6 +9,7 @@ DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'rele
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
+gem "decidim-templates", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
 
 gem "bootsnap", "~> 1.3"
