@@ -16,6 +16,7 @@ gem "bootsnap", "~> 1.3"
 
 gem "puma", "~> 4.3.3"
 gem "uglifier", "~> 4.1"
+gem 'whenever', require: false
 
 gem "faker", "~> 1.9"
 
