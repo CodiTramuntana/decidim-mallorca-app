@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/decidim/decidim.git
-  revision: 5b53cf04276fb6f2f64f8151818047edf45a2ba8
+  revision: 49db1763a7b4435d63ffde96bc770e781cb39cbd
   branch: release/0.23-stable
   specs:
     decidim (0.23.1)
@@ -262,7 +262,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     anchored (1.1.0)
     arel (9.0.0)
-    ast (2.4.1)
+    ast (2.4.2)
     autoprefixer-rails (8.6.5)
       execjs
     axiom-types (0.1.1)
@@ -306,13 +306,13 @@ GEM
       sshkit (~> 1.3)
     capistrano-yarn (2.0.2)
       capistrano (~> 3.0)
-    capybara (3.34.0)
+    capybara (3.35.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      regexp_parser (~> 1.5)
+      regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     carrierwave (1.3.1)
       activemodel (>= 4.0.0)
@@ -330,7 +330,7 @@ GEM
       actionpack (>= 3.0)
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
-    chef-utils (16.9.20)
+    chef-utils (16.9.29)
     childprocess (3.0.0)
     chronic (0.10.2)
     coercible (1.0.0)
@@ -346,7 +346,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    css_parser (1.7.1)
+    css_parser (1.8.0)
       addressable
     daemons (1.3.1)
     date_validator (0.9.0)
@@ -436,7 +436,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.11.7)
+    graphql (1.12.1)
     hashdiff (1.0.1)
     hashie (4.1.0)
     highline (2.0.3)
@@ -542,7 +542,7 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    oauth (0.5.4)
+    oauth (0.5.5)
     oauth2 (1.4.4)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -597,7 +597,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
-    rack-attack (6.3.1)
+    rack-attack (6.4.0)
       rack (>= 1.0, < 3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -652,7 +652,7 @@ GEM
       wisper (>= 1.6.1)
     redcarpet (3.5.1)
     redis (4.2.5)
-    regexp_parser (1.8.2)
+    regexp_parser (2.0.3)
     request_store (1.5.0)
       rack (>= 1.4)
     responders (3.0.1)
@@ -738,8 +738,8 @@ GEM
     smart_properties (1.15.0)
     social-share-button (1.2.3)
       coffee-rails
-    spreadsheet (1.2.6)
-      ruby-ole (>= 1.0)
+    spreadsheet (1.2.7)
+      ruby-ole
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
