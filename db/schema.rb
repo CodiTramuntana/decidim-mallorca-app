@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_20_101411) do
+ActiveRecord::Schema.define(version: 2021_01_26_082654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -462,6 +462,7 @@ ActiveRecord::Schema.define(version: 2021_01_20_101411) do
     t.integer "min_votes"
     t.integer "response_groups_count", default: 0, null: false
     t.jsonb "instructions"
+    t.integer "comments_count", default: 0, null: false
     t.index ["decidim_consultation_id"], name: "index_consultations_questions_on_consultation_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_question_slug_and_organization", unique: true
     t.index ["decidim_scope_id"], name: "index_decidim_consultations_questions_on_decidim_scope_id"
@@ -501,6 +502,7 @@ ActiveRecord::Schema.define(version: 2021_01_20_101411) do
     t.index ["decidim_consultation_question_id", "decidim_author_id", "decidim_user_group_id"], name: "index_question_votes_author_unique", unique: true
     t.index ["decidim_consultation_question_id"], name: "index_consultations_votes_on_consultation_question"
     t.index ["decidim_consultations_response_id"], name: "index_consultations_votes_on_consultations_response_id"
+    t.index ["decidim_user_group_id"], name: "index_decidim_consultations_votes_on_decidim_user_group_id"
   end
 
   create_table "decidim_content_blocks", force: :cascade do |t|
