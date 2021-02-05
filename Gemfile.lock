@@ -207,6 +207,16 @@ GIT
     decidim-verifications (0.23.1)
       decidim-core (= 0.23.1)
 
+GIT
+  remote: https://github.com/gencat/participa.git
+  revision: 8037405b3fa95ff734d4055b294fcd862be8dad5
+  glob: decidim-top_comments/decidim-top_comments.gemspec
+  specs:
+    decidim-top_comments (0.23.1)
+      decidim-core (>= 0.22)
+      decidim-proposals (>= 0.22)
+      deface (~> 1.5.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -344,11 +354,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.7)
+    concurrent-ruby (1.1.8)
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    css_parser (1.8.0)
+    css_parser (1.9.0)
       addressable
     daemons (1.3.1)
     date_validator (0.9.0)
@@ -360,6 +370,11 @@ GEM
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
+    deface (1.5.3)
+      nokogiri (>= 1.6)
+      polyglot
+      rails (>= 4.1)
+      rainbow (>= 2.1.0)
     delayed_job (4.1.8)
       activesupport (>= 3.0, < 6.1)
     delayed_job_active_record (4.1.4)
@@ -438,7 +453,7 @@ GEM
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.12.1)
+    graphql (1.12.3)
     hashdiff (1.0.1)
     hashie (4.1.0)
     highline (2.0.3)
@@ -450,7 +465,7 @@ GEM
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    i18n (1.8.7)
+    i18n (1.8.8)
       concurrent-ruby (~> 1.0)
     i18n-tasks (0.9.33)
       activesupport (>= 4.0.2)
@@ -561,9 +576,9 @@ GEM
       oauth2 (~> 1.1)
       omniauth (>= 1.1.1)
       omniauth-oauth2 (>= 1.6)
-    omniauth-oauth (1.1.0)
+    omniauth-oauth (1.2.0)
       oauth
-      omniauth (~> 1.0)
+      omniauth (>= 1.0, < 3)
     omniauth-oauth2 (1.7.1)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
@@ -587,6 +602,7 @@ GEM
     pg_search (2.3.5)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
+    polyglot (0.3.5)
     premailer (1.14.2)
       addressable
       css_parser (>= 1.6.0)
@@ -765,7 +781,7 @@ GEM
     temple (0.8.2)
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    thor (1.0.1)
+    thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tomlrb (2.0.1)
@@ -830,6 +846,7 @@ DEPENDENCIES
   decidim-consultations!
   decidim-dev!
   decidim-templates!
+  decidim-top_comments!
   delayed_job_active_record
   faker (~> 1.9)
   figaro
@@ -847,4 +864,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
