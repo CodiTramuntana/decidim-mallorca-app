@@ -11,6 +11,8 @@ gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-templates", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
 
+gem 'decidim-top_comments', git: 'https://github.com/gencat/participa.git', glob: 'decidim-top_comments/decidim-top_comments.gemspec'
+
 gem "bootsnap", "~> 1.3"
 
 gem "puma", "~> 4.3.3"
