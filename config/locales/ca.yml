@@ -1,0 +1,8 @@
+ca:
+  forms:
+    length_validator:
+      # This translation should have been updated at Decidim 0.25
+      # if there also starts with uppercase, remove it from here
+      minimum:
+        one: Com a mínim %{count} caràcter
+        other: Com a mínim %{count} caràcters
