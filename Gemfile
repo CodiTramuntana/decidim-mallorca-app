@@ -21,6 +21,7 @@ gem 'whenever', require: false
 gem 'capistrano-systemd'
 
 gem "faker", "~> 1.9"
+gem "deface"
 
 # Keep environment secret variables secret
 gem "figaro"
