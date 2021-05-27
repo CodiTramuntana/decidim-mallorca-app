@@ -12,3 +12,38 @@ es:
       minimum:
         one: Como mínimo %{count} carácter
         other: Como mínimo %{count} caracteres
+  footer:
+    menus:
+      citizen_participation:
+        budgets: Presupuestos participativos
+        help: Ayuda
+        news: Noticias
+        title: Participación ciudadana
+        portals: Portales de participación
+        processes: Procesos normativos
+        voting: Votaciones
+      transparency:
+        indicators: Indicadores de Transparencia Consell
+        help: Ayuda
+        title: Transparencia
+        news: Noticias
+        portals: Portales de transparencia
+        organizations: Transparencia Organismos Dependientes
+      open_data:
+        about: Acerca de
+        applications: Aplicaciones
+        community: Comunidad de usuarios
+        data_catalog: Catálogo de Datos
+        formats: Formatos
+        framework: Marco Legal del Opendata
+        help: Help
+        licenses: Licencias
+        information: Información sobre otros portales OpenData
+        news: Noticias
+        normative: Normativa
+        take_part: Participa
+        title: Datos abiertos
+        portals: Portales de Datos Abiertos
+        statistics: Estadísticas de utilización
+        stories: Casos de Éxito
+        what_is: ¿Qué es OpenData?

@@ -31,3 +31,38 @@
 
 en:
   hello: "Hello world"
+  footer:
+    menus:
+      citizen_participation:
+        budgets: Participatory budgets
+        help: Help
+        news: News
+        title: Citizen participation
+        portals: Participation portals
+        processes: Regulatory processes
+        voting: Voting
+      transparency:
+        indicators: Consell Transparency Indicators
+        help: Help
+        title: Transparency
+        news: News
+        portals: Transparency portals
+        organizations: Transparency Dependent Organizations
+      open_data:
+        about: About
+        applications: Applications
+        community: Community of users
+        data_catalog: Data catalog
+        formats: Formats
+        framework: Open Data Legal Framework
+        help: Help
+        licenses: Licenses
+        information: Information on other Open Data portals
+        news: News
+        normative: Normative
+        take_part: Take part
+        title: Open data
+        portals: Open Data portals
+        statistics: Utilization statistics
+        stories: Success stories
+        what_is: What is OpenData?
