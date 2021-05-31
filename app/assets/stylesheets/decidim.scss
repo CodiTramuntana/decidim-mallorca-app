@@ -1,9 +1,9 @@
 // // Variables
 // 
-// $primary: #ef604d;
-// $primary-rgb: 239,96,77;
-// $secondary: #599aa6;
-// $secondary-rgb: 89,154,166;
+$primary: #0071ce;
+$primary-rgb: 0,113,206;
+$secondary: #0071ce;
+$secondary-rgb: 0,113,206;
 // $success: #57d685;
 // $success-rgb: 87,214,133;
 // $warning: #ffae00;
@@ -26,11 +26,11 @@
 // 
 // // Define custom properties as css color variables
 // 
-// :root{
-//   --primary: #{$primary};
-//   --primary-rgb: #{$primary-rgb};
-//   --secondary: #{$secondary};
-//   --secondary-rgb: #{$secondary-rgb};
+:root{
+  --primary: #{$primary} !important;
+  --primary-rgb: #{$primary-rgb} !important;
+  --secondary: #{$secondary} !important;
+  --secondary-rgb: #{$secondary-rgb} !important;
 //   --success: #{$success};
 //   --success-rgb: #{$success-rgb};
 //   --warning: #{$warning};
@@ -44,6 +44,6 @@
 //   --twitter: #{$twitter};
 //   --facebook: #{$facebook};
 //   --google: #{$google};
-// }
+}
 
 @import "decidim/application";

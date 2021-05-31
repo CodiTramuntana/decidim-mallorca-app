@@ -849,6 +849,7 @@ DEPENDENCIES
   decidim-dev!
   decidim-templates!
   decidim-top_comments!
+  deface
   delayed_job_active_record
   faker (~> 1.9)
   figaro
@@ -866,4 +867,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.1.4
+   2.2.16
