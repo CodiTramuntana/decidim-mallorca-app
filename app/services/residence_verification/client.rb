@@ -9,7 +9,6 @@ module ResidenceVerification
 
     def initialize
       @client = Savon.client(wsdl: Rails.root.join('lib/consell_mallorca/authorization/ws/INE.VerificacionAmbitoResidencia.wsdl'), endpoint: endpoint_url) do
-      # @client = Savon.client(endpoint: endpoint_url, namespace: "http://intermediacion.redsara.es/scsp/wsdl") do
         path= Rails.root.join(Rails.env.production? ? "config" : "spec/support")
         akami_wsse_certs= Akami::WSSE::Certs.new(cert_file: path.join("certs/cert.pem"), private_key_file: path.join("certs/key.pem"))
         wsse_signature Akami::WSSE::Signature.new(akami_wsse_certs)
