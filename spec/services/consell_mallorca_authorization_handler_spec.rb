@@ -12,7 +12,7 @@ describe ConsellMallorcaAuthorizationHandler do
   end
 
   it "validates" do
-    stub_request(:post, "https://intermediacionpp.redsara.es/servicios/SVD/INE.VerificacionAmbitoResidencia").
+    stub_request(:post, Rails.application.secrets.ine_endpoint_url).
       to_return(status: 200, body: soap_response, headers: {})
 
     expect(handler.valid?).to be true
