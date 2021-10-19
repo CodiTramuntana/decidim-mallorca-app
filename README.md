@@ -23,12 +23,24 @@ You're good to go!
 
 ## Residence verification
 
-In order for the residence verification integration to work, three things must be configured at different levels.
+A new `consell_mallorca_authorization_handler` authorization is provided for Organizations to enable it.
+In order for the residence verification integration to work, some things must be configured at different levels.
 
-- First, the installation must have the certificates correctly placed. This is, for the production envitonment, CA certificates are expected at `config/certs/key.pem` and `config/certs/cert.pem`.
-- Second, access to the INE VPN should have been configured in the client.
-- Third, for each Organization, the admin will have to configure the corresponding municipality code at the "Admin Panel/Cens" menu option.
+### Installation configuration
 
+- The installation must have the certificates correctly placed. This is, for the production envitonment, CA certificates are expected at `config/certs/key.pem` and `config/certs/cert.pem`.
+- Access to the INE VPN should have been configured in the client.
+
+### System admin configuration
+
+- A system administrator should login into the system admin panel and, for the given organization, enable the `consell_mallorca_authorization_handler` ("Census").
+
+### Admin configuration
+An organization admin will have to:
+
+- configure the corresponding municipality code at the "Admin Panel/Census" menu option.
+
+### Checking residence from console
 A `rake` task has been implemented to check citizens residence against the INE web service. The task can be executed as follows:
 
 ```bash
