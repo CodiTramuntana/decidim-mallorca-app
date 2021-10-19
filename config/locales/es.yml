@@ -34,7 +34,7 @@ es:
           nie: NIE
           nif: NIF
           passport: Pasaporte
-        explanation: Verificate mediante el censo del Consell de Mallorca
+        explanation: Verifícate mediante el censo del Consell de Mallorca
         name: Censo
   forms:
     length_validator:
