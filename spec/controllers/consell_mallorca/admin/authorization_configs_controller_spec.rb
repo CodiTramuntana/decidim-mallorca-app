@@ -2,8 +2,6 @@
 
 require "rails_helper"
 
-# require Rails.root.join "app/controllers", "consell_mallorca/admin/authorization_configs_controller"
-
 RSpec.describe ConsellMallorca::Admin::AuthorizationConfigsController,
                type: :controller do
   include Warden::Test::Helpers
@@ -14,7 +12,7 @@ RSpec.describe ConsellMallorca::Admin::AuthorizationConfigsController,
   end
 
   let(:user) do
-    FactoryBot.create :user, :confirmed, :admin_terms_accepted, organization: organization, admin: true#, nickname: "nickname"
+    FactoryBot.create :user, :confirmed, :admin_terms_accepted, organization: organization, admin: true
   end
 
   before do
