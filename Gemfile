@@ -26,6 +26,9 @@ gem "deface"
 # Keep environment secret variables secret
 gem "figaro"
 
+# Soap client
+gem "savon", "~> 2.12.1"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 

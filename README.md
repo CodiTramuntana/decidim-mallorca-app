@@ -1,4 +1,4 @@
-# decidim_mallorca
+# Decidim Mallorca
 
 Free Open-Source participatory democracy, citizen participation and open government for cities and organizations
 
@@ -20,5 +20,19 @@ user.save!
 6. Fill the rest of the form and submit it.
 
 You're good to go!
-# decidim-mallorca-app
-# decidim-mallorca-app
+
+## Residence verification
+
+In order for the residence verification integration to work, three things must be configured at different levels.
+
+- First, the installation must have the certificates correctly placed. This is, for the production envitonment, CA certificates are expected at `config/certs/key.pem` and `config/certs/cert.pem`.
+- Second, access to the INE VPN should have been configured in the client.
+- Third, for each Organization, the admin will have to configure the corresponding municipality code at the "Admin Panel/Cens" menu option.
+
+A `rake` task has been implemented to check citizens residence against the INE web service. The task can be executed as follows:
+
+```bash
+bin/rake residence_verification:check[nif,00000000T,0001]
+```
+
+Note that access to the INE VPN is required.

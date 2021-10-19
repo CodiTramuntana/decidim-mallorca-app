@@ -1,8 +1,41 @@
 ca:
+  activerecord:
+    attributes:
+      decidim/organization:
+        # This translation should have been added at Decidim 0.24
+        # if it's already there, remove it from here
+        admin_terms_of_use_body: Cos dels termes d'ús dels administradors
+        consell_mallorca_municipality_code: Codi de municipi del INE
   activemodel:
     attributes:
-      organization:
-        admin_terms_of_use_body: Cos dels termes d'ús dels administradors
+      consell_mallorca_authorization_handler:
+        document_type: Tipus de document
+        document_number: Número de document
+  consell_mallorca:
+    admin:
+      authorization_configs:
+        edit:
+          cancel: Cancel·la
+          submit: Envia
+          title: Configuració del Cens
+        update:
+          success: S'ha desat correctament el codi de municipi per a integrar amb el sistema del padró
+  decidim:
+    consell_mallorca_authorization:
+      admin:
+        menu: Cens
+      errors:
+        messages:
+          not_censed: No formeu part del cens
+          rq_failed: La connexió amb el cens ha fallat
+    authorization_handlers:
+      consell_mallorca_authorization_handler:
+        document_types:
+          nie: NIE
+          nif: NIF
+          passport: Passaport
+        explanation: Verifica't mitjançant el cens del Consell de Mallorca
+        name: Cens
   forms:
     length_validator:
       # This translation should have been updated at Decidim 0.25

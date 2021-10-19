@@ -1,36 +1,39 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      decidim/organization:
+        admin_terms_of_use_body: Terms of use body
+        consell_mallorca_municipality_code: INE municipality code
+  activemodel:
+    attributes:
+      consell_mallorca_authorization_handler:
+        document_type: Document type
+        document_number: Document number
+  consell_mallorca:
+    admin:
+      authorization_configs:
+        edit:
+          cancel: Cancel
+          submit: Submit
+          title: Census configuration
+        update:
+          success: The municipality code to integrate with the residence registry has been successfully saved
+  decidim:
+    consell_mallorca_authorization:
+      admin:
+        menu: Census
+      errors:
+        messages:
+          not_censed: You are not part of the census
+          rq_failed: The connection to the census has failed
+    authorization_handlers:
+      consell_mallorca_authorization_handler:
+        document_types:
+          nie: NIE
+          nif: NIF
+          passport: Passport
+        explanation: Verify against the Consell de Mallorca census
+        name: Census
   footer:
     menus:
       citizen_participation:
