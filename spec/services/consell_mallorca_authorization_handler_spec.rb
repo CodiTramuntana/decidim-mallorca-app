@@ -3,11 +3,11 @@
 require "rails_helper"
 
 describe ConsellMallorcaAuthorizationHandler do
-  let(:organization) { FactoryBot.create(:organization) }
+  let(:organization) { FactoryBot.create(:organization, consell_mallorca_municipality_code: "0001") }
   let(:user) { FactoryBot.create(:user, organization: organization, nickname: "nickname") }
   let(:nif) { "00000000T" }
   let(:handler) do
-    ConsellMallorcaAuthorizationHandler.new(user: user, document_type: :nif, document_number: nif, municipality_code: "0001")
+    ConsellMallorcaAuthorizationHandler.new(user: user, document_type: :nif, document_number: nif, municipality_code: organization.consell_mallorca_municipality_code)
                               .with_context(current_organization: organization)
   end
 
@@ -23,7 +23,10 @@ describe ConsellMallorcaAuthorizationHandler do
   end
 
   it "#unique_id" do
-    expect(handler.unique_id).to eq("45dd7602b9fe61289613abf5428ec7b8c5630d6dda8f2e8915b93bbba239a0d7")
+    encoded= Digest::SHA256.hexdigest(
+      "nif-#{nif}-0001-#{Rails.application.secrets.secret_key_base}"
+    )
+    expect(handler.unique_id).to eq(encoded)
   end
 
   def soap_response

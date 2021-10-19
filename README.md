@@ -30,6 +30,7 @@ In order for the residence verification integration to work, some things must be
 
 - The installation must have the certificates correctly placed. This is, for the production environment, CA certificates are expected at `config/certs/key.pem` and `config/certs/cert.pem`.
 - Access to the INE VPN should have been configured in the client.
+- Set the correct `INE_ENDPOINT_URL` value at `config/application.yml`
 
 ### System admin configuration
 

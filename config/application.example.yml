@@ -15,6 +15,7 @@ default: &default
   # GeoCoder configuration (developer.here.com)
   HERE_API_KEY: "your here api key"
   SECRET_KEY_BASE: "secret_key_base"
+  INE_ENDPOINT_URL: "https://intermediacionpp.redsara.es/servicios/SVD/INE.VerificacionAmbitoResidencia"
 
 development:
   <<: *default
