@@ -4,14 +4,13 @@ require "rails_helper"
 require "savon"
 
 describe "Soap client" do
-  it "should produce the request msg" do
-    # create a client for the service
-    # wsdl_uri= 'http://service.example.com?wsdl'
-    wsdl_uri= Rails.root.join('lib/consell_mallorca/authorization/ws/INE.VerificacionAmbitoResidencia.wsdl')
-    client = Savon.client(wsdl: wsdl_uri)
+  it "should have the correct wsdl" do
+    client = ResidenceVerification::Client.new.client
 
     expect(client.operations).to eq([:peticion_sincrona])
+  end
 
+  it "should produce the request msg" do
     tituar= ResidenceVerification::Rq::Titular.new(:nif, "00000000T", "0027")
     rq= ResidenceVerification::Rq::SoapBody.new(tituar).to_h
     expect(rq[:Peticion][:Atributos][:IdPeticion]).to start_with("SVDRWS01-")
@@ -30,12 +29,5 @@ describe "Soap client" do
     expect(solicitud[:DatosEspecificos][:Espanol]).to eq("s")
     expect(solicitud[:DatosEspecificos][:Residencia][:Provincia]).to eq("07")
     expect(solicitud[:DatosEspecificos][:Residencia][:Municipio]).to eq("0027")
-
-    stub_request(:post, "https://intermediacionpp.redsara.es/servicios/SVD/INE.VerificacionAmbitoResidencia").
-      to_return(status: 200, body: "", headers: {})
-    response = client.call(:peticion_sincrona, message: rq)
-
-    response.body
-    # => { find_user_response: { id: 42, name: 'Hoff' } }
   end
 end

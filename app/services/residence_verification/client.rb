@@ -5,7 +5,7 @@
 module ResidenceVerification
   class Client
 
-    attr_reader :codigo_estado_respuesta
+    attr_reader :codigo_estado_respuesta, :client
 
     def initialize
       @client = Savon.client(wsdl: Rails.root.join('lib/consell_mallorca/authorization/ws/INE.VerificacionAmbitoResidencia.wsdl'), endpoint: endpoint_url) do
@@ -29,11 +29,7 @@ module ResidenceVerification
     #------------------------------------------------------
 
     def endpoint_url
-      if Rails.env.production?
-        "https://intermediacion.redsara.es/servicios/SVD/INE.VerificacionAmbitoResidencia"
-      else
-        "https://intermediacionpp.redsara.es/servicios/SVD/INE.VerificacionAmbitoResidencia"
-      end
+      Rails.application.secrets.ine_endpoint_url
     end
   end
 end
