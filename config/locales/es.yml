@@ -26,8 +26,8 @@ es:
         menu: Censo
       errors:
         messages:
-          not_censed: No formeu part del cens
-          rq_failed: La connexió amb el cens ha fallat
+          not_censed: No formas parte del censo
+          rq_failed: La conexión con el censo ha fallado
     authorization_handlers:
       consell_mallorca_authorization_handler:
         document_types:
