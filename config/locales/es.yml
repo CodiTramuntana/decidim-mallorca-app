@@ -1,10 +1,4 @@
 es:
-  activemodel:
-    attributes:
-      organization:
-        # This translation should have been added at Decidim 0.24
-        # if it's already there, remove it from here
-        admin_terms_of_use_body: Cuerpo de los términos de uso de los administradores
   forms:
     length_validator:
       # This translation should have been updated at Decidim 0.25
