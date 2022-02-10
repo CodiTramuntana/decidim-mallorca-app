@@ -1,8 +1,4 @@
 ca:
-  activemodel:
-    attributes:
-      organization:
-        admin_terms_of_use_body: Cos dels termes d'ús dels administradors
   forms:
     length_validator:
       # This translation should have been updated at Decidim 0.25

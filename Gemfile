@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.23-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.24-stable' }
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
@@ -15,12 +15,12 @@ gem 'decidim-top_comments', git: 'https://github.com/gencat/participa.git', glob
 
 gem "bootsnap", "~> 1.3"
 
-gem "puma", "~> 4.3.3"
+gem "puma", "~> 5.0"
 gem "uglifier", "~> 4.1"
 gem 'whenever', require: false
 gem 'capistrano-systemd'
 
-gem "faker", "~> 1.9"
+gem "faker", "~> 2.14.0"
 gem "deface"
 
 # Keep environment secret variables secret
