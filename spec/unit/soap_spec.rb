@@ -21,6 +21,13 @@ describe "Soap client" do
     solicitud= rq[:Peticion][:Solicitudes].first[:SolicitudTransmision]
     expect(solicitud[:DatosGenericos][:Emisor][:NifEmisor]).to eq("S2833002E")
     expect(solicitud[:DatosGenericos][:Emisor][:NombreEmisor]).to eq("Ministerio de Hacienda y Administraciones Públicas")
+    expect(solicitud[:DatosGenericos][:Solicitante][:IdentificadorSolicitante]).to eq("S0711001H")
+    expect(solicitud[:DatosGenericos][:Solicitante][:NombreSolicitante]).to eq("CONSELL INSULAR DE MALLORCA")
+    expect(solicitud[:DatosGenericos][:Solicitante][:UnidadTramitadora]).to eq("DIRECCIO INSULAR DE PARTICIPACIO")
+    expect(solicitud[:DatosGenericos][:Solicitante][:Procedimiento][:CodProcedimiento]).to eq("CODSVDA_GBA_20131008")
+    expect(solicitud[:DatosGenericos][:Solicitante][:Procedimiento][:NombreProcedimiento]).to eq("PRUEBAS DE INTEGRACION PARA GOBIERNO DE BALEARES")
+    expect(solicitud[:DatosGenericos][:Solicitante][:Finalidad]).to eq("Poder participar en la plataforma de participación del Consell de Mallorca")
+    expect(solicitud[:DatosGenericos][:Solicitante][:Consentimiento]).to eq("Si")
     expect(solicitud[:DatosGenericos][:Titular][:TipoDocumentacion]).to eq("NIF")
     expect(solicitud[:DatosGenericos][:Titular][:Documentacion]).to eq("00000000T")
     expect(solicitud[:DatosGenericos][:Transmision][:CodigoCertificado]).to eq("SVDRWS01")

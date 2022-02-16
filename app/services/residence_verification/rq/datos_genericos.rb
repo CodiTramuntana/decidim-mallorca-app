@@ -35,27 +35,31 @@ module ResidenceVerification
       end
 
       def nif_del_organismo
-        "TODO"
+        "S0711001H"
       end
 
       # Nombre o razón social del organismo
       def nombre_solicitante
-        "TODO"
+        "CONSELL INSULAR DE MALLORCA"
       end
 
       # Unidad Tramitadora a la que pertenece la persona o aplicación que solicita los datos.
       def unidad_tramitadora
-        "TODO"
+        "DIRECCIO INSULAR DE PARTICIPACIO"
       end
 
       # Cóigo del Procedimiento que autoriza al usuario a realizar la consulta.
       def cod_procedimiento
-        "TODO"
+        "CODSVDA_GBA_20131008"
       end
 
       # Nombre del Procedimiento que autoriza al usuario a realizar la consulta.
       def nombre_procedimiento
-        "TODO"
+        if Rails.env.production?
+          "CONSULTA PARA GOBIERNO DE BALEARES"
+        else
+          "PRUEBAS DE INTEGRACION PARA GOBIERNO DE BALEARES"
+        end
       end
 
       # Contiene el motivo o causa por la que se necesita realizar la verificación de datos de residencia.
