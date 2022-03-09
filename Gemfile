@@ -15,7 +15,7 @@ gem 'decidim-top_comments', git: 'https://github.com/gencat/participa.git', glob
 
 gem "bootsnap", "~> 1.3"
 
-gem "puma", "~> 5.0"
+gem "puma", "~> 5.6"
 gem "uglifier", "~> 4.1"
 gem 'whenever', require: false
 gem 'capistrano-systemd'
