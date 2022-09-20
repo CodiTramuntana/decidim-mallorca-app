@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_08_122163) do
+ActiveRecord::Schema.define(version: 2022_09_20_133734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -566,6 +566,55 @@ ActiveRecord::Schema.define(version: 2022_02_08_122163) do
     t.index ["endorsements_count"], name: "idx_decidim_debates_debates_on_endorsemnts_count"
   end
 
+  create_table "decidim_dummy_resources_coauthorable_dummy_resources", force: :cascade do |t|
+    t.jsonb "translatable_text"
+    t.string "title"
+    t.string "body"
+    t.text "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "published_at"
+    t.integer "coauthorships_count", default: 0, null: false
+    t.integer "endorsements_count", default: 0, null: false
+    t.integer "comments_count", default: 0, null: false
+    t.bigint "decidim_component_id"
+    t.bigint "decidim_category_id"
+    t.bigint "decidim_scope_id"
+    t.string "reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "decidim_dummy_resources_dummy_resources", force: :cascade do |t|
+    t.jsonb "translatable_text"
+    t.jsonb "title"
+    t.string "body"
+    t.text "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "published_at"
+    t.integer "coauthorships_count", default: 0, null: false
+    t.integer "endorsements_count", default: 0, null: false
+    t.integer "comments_count", default: 0, null: false
+    t.bigint "decidim_component_id"
+    t.integer "decidim_author_id"
+    t.string "decidim_author_type"
+    t.integer "decidim_user_group_id"
+    t.bigint "decidim_category_id"
+    t.bigint "decidim_scope_id"
+    t.string "reference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "decidim_dummy_resources_nested_dummy_resources", force: :cascade do |t|
+    t.jsonb "translatable_text"
+    t.string "title"
+    t.bigint "dummy_resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "decidim_endorsements", force: :cascade do |t|
     t.string "resource_type"
     t.bigint "resource_id"
@@ -979,6 +1028,9 @@ ActiveRecord::Schema.define(version: 2022_02_08_122163) do
     t.integer "comments_max_length", default: 1000
     t.jsonb "file_upload_settings"
     t.string "machine_translation_display_priority", default: "original", null: false
+    t.string "consell_mallorca_municipality_code"
+    t.string "pinbal_user"
+    t.string "pinbal_pwd"
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end

@@ -1,0 +1,13 @@
+<div class="field">
+  <%= form.select :document_type, handler.census_document_types, prompt: true %>
+</div>
+
+<div class="field">
+  <%= form.text_field :document_number %>
+</div>
+
+<div class="field">
+  <%= form.text_field :surname %>
+</div>
+
+<%= form.hidden_field :handler_name %>
