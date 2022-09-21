@@ -13,7 +13,7 @@ describe ConsellMallorcaAuthorizationHandler do
   end
 
   it "validates" do
-    stub_request(:post, ::ResidenceVerification::Client::PINBAL_ENDPOINT_URL).
+    stub_request(:post, Rails.application.secrets.pinbal_endpoint_url).
       to_return(status: 200, body: json_response, headers: {})
 
     expect(handler.valid?).to be true

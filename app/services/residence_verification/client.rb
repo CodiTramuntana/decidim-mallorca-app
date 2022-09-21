@@ -5,8 +5,6 @@
 module ResidenceVerification
   class Client
 
-    PINBAL_ENDPOINT_URL = "https://proves.caib.es/pinbalapi/interna/recobriment/peticionSincrona"
-
     attr_reader :codigo_estado_respuesta, :client
 
     # The Organization with the Pinbal user and password
@@ -38,7 +36,7 @@ module ResidenceVerification
         faraday.request :authorization, "Basic", basic_auth_credentials
         faraday.request :json
       end
-      rs = conn.post(PINBAL_ENDPOINT_URL, json_document) do |conn|
+      rs = conn.post(Rails.application.secrets.pinbal_endpoint_url, json_document) do |conn|
         conn.headers = {
           "Accept" => "application/json", "Content-Type" => "application/json"
         }
