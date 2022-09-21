@@ -5,7 +5,7 @@ es:
         # This translation should have been added at Decidim 0.24
         # if it's already there, remove it from here
         admin_terms_of_use_body: Cuerpo de los términos de uso de los administradores
-        pinbal_pwd: Password del ayuntamento a Pinbal
+        pinbal_pwd: Contraseña del ayuntamento a Pinbal (password)
         pinbal_user: Código de usuario del ayuntamento a Pinbal
         pinbal_solicitante_identificador_solicitante: Identificador del solicitante
         pinbal_solicitante_nombre_solicitante: Nombre del solicitante
@@ -22,7 +22,7 @@ es:
       consell_mallorca_authorization_handler:
         document_type: Tipo de documento
         document_number: Número de documento
-        surname: Primer cognom
+        surname: Primer apellido
   consell_mallorca:
     admin:
       authorization_configs:
