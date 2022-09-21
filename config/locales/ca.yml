@@ -7,6 +7,16 @@ ca:
         admin_terms_of_use_body: Cos dels termes d'ús dels administradors
         pinbal_pwd: Paraula clau de l'ajuntament a Pinbal (password)
         pinbal_user: Codi d'usuari de l'ajuntament a Pinbal
+        pinbal_solicitante_identificador_solicitante: Identificador del solicitant
+        pinbal_solicitante_nombre_solicitante: Nom del solicitant
+        pinbal_solicitante_unidad_tramitadora: Unitat tramitadora
+        pinbal_solicitante_cod_procedimiento:  Codi del procediment
+        pinbal_solicitante_nombre_procedimiento: Nom del procediment
+        pinbal_solicitante_nombre_completo_funcionario: Nom del funcionari
+        pinbal_solicitante_nif_funcionario: NIF del funcionari
+        pinbal_solicitante_id_expediente: Identificador expedient
+        pinbal_solicitante_finalidad: Finalitat
+        pinbal_solicitante_consentimiento: Consentiment?
   activemodel:
     attributes:
       consell_mallorca_authorization_handler:

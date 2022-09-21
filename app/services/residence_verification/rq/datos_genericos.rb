@@ -2,7 +2,8 @@ module ResidenceVerification
   module Rq
     # Peticion/Solicitudes/SolicitudTransmision/DatosGenericos
     class DatosGenericos
-      def initialize(rq_id, titular)
+      def initialize(organization, rq_id, titular)
+        @organization= organization
         @rq_id= rq_id
         @titular= titular
       end
@@ -18,10 +19,10 @@ module ResidenceVerification
               codProcedimiento: cod_procedimiento,
               nombreProcedimiento: nombre_procedimiento
             },
-            funcionario: {nombreCompletoFuncionario: "Funcionari Consell", nifFuncionario:"00000000T"},
-            idExpediente: "EXP/18122012",
+            funcionario: {nombreCompletoFuncionario: nombre_completo_funcionario, nifFuncionario: nif_funcionario},
+            idExpediente: id_expediente,
             finalidad: finalidad,
-            consentimiento: "Si",
+            consentimiento: consentimiento,
           },
           titular: @titular.to_h,
           # Transmision: {CodigoCertificado: ResidenceVerification::Rq::DocumentBody::CODIGO_CERTIFICADO, IdSolicitud: @rq_id}
@@ -37,36 +38,48 @@ module ResidenceVerification
       end
 
       def nif_del_organismo
-        "S0711001H"
+        Rails.application.secrets.pinbal_solicitante_identificador_solicitante
       end
 
       # Nombre o razón social del organismo
       def nombre_solicitante
-        "CONSELL INSULAR DE MALLORCA"
+        Rails.application.secrets.pinbal_solicitante_nombre_solicitante
       end
 
       # Unidad Tramitadora a la que pertenece la persona o aplicación que solicita los datos.
       def unidad_tramitadora
-        "DIRECCIO INSULAR DE PARTICIPACIO"
+        Rails.application.secrets.pinbal_solicitante_unidad_tramitadora
       end
 
       # Cóigo del Procedimiento que autoriza al usuario a realizar la consulta.
       def cod_procedimiento
-        "CODSVDR_GBA_20121107"
+        Rails.application.secrets.pinbal_solicitante_cod_procedimiento
       end
 
       # Nombre del Procedimiento que autoriza al usuario a realizar la consulta.
       def nombre_procedimiento
-        if Rails.env.production?
-          "CONSULTA PARA GOBIERNO DE BALEARES"
-        else
-          "PRUEBAS DE INTEGRACION PARA GOBIERNO DE BALEARES"
-        end
+        Rails.application.secrets.pinbal_solicitante_nombre_procedimiento
+      end
+
+      def nombre_completo_funcionario
+        Rails.application.secrets.pinbal_solicitante_nombre_completo_funcionario
+      end
+
+      def nif_funcionario
+        Rails.application.secrets.pinbal_solicitante_nif_funcionario
+      end
+
+      def id_expediente
+        Rails.application.secrets.pinbal_solicitante_id_expediente
       end
 
       # Contiene el motivo o causa por la que se necesita realizar la verificación de datos de residencia.
       def finalidad
-        "Poder participar en la plataforma de participación del Consell de Mallorca"
+        Rails.application.secrets.pinbal_solicitante_finalidad
+      end
+
+      def consentimiento
+        Rails.application.secrets.pinbal_solicitante_consentimiento
       end
     end
   end

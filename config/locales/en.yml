@@ -5,6 +5,16 @@ en:
         admin_terms_of_use_body: Terms of use body
         pinbal_pwd: Password to connect to Pinbal
         pinbal_user: User code to connect to Pinbal
+        pinbal_solicitante_identificador_solicitante: Applicant's identifier
+        pinbal_solicitante_nombre_solicitante: Applicant's name
+        pinbal_solicitante_unidad_tramitadora: Processing unit
+        pinbal_solicitante_cod_procedimiento:  Procedure code
+        pinbal_solicitante_nombre_procedimiento: Procedure name
+        pinbal_solicitante_nombre_completo_funcionario: Civil servant name
+        pinbal_solicitante_nif_funcionario: Civil servant NIF
+        pinbal_solicitante_id_expediente: File identifier
+        pinbal_solicitante_finalidad: Finality
+        pinbal_solicitante_consentimiento: Consent?
   activemodel:
     attributes:
       consell_mallorca_authorization_handler:

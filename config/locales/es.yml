@@ -7,6 +7,16 @@ es:
         admin_terms_of_use_body: Cuerpo de los términos de uso de los administradores
         pinbal_pwd: Password del ayuntamento a Pinbal
         pinbal_user: Código de usuario del ayuntamento a Pinbal
+        pinbal_solicitante_identificador_solicitante: Identificador del solicitante
+        pinbal_solicitante_nombre_solicitante: Nombre del solicitante
+        pinbal_solicitante_unidad_tramitadora: Unidad tramitadora
+        pinbal_solicitante_cod_procedimiento:  Código del procedimiento
+        pinbal_solicitante_nombre_procedimiento: Nombre del procedimiento
+        pinbal_solicitante_nombre_completo_funcionario: Nombre del funcionario
+        pinbal_solicitante_nif_funcionario: NIF del funcionario
+        pinbal_solicitante_id_expediente: Identificador expediente
+        pinbal_solicitante_finalidad: Finalidad
+        pinbal_solicitante_consentimiento: Consentimiento?
   activemodel:
     attributes:
       consell_mallorca_authorization_handler:

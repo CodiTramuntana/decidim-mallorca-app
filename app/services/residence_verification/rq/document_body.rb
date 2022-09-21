@@ -4,7 +4,8 @@ module ResidenceVerification
       CODIGO_CERTIFICADO= "SVDDGPCIWS02"
       ID_PETICION_PREFIX= "SVDRWS01"
 
-      def initialize(titular)
+      def initialize(organization, titular)
+        @organization= organization
         @titular= titular
         @rq_timestamp= Time.zone.now
         @rq_id= "#{ResidenceVerification::Rq::DocumentBody::ID_PETICION_PREFIX}-#{@rq_timestamp.to_i}"
@@ -23,7 +24,7 @@ module ResidenceVerification
 
       def solicitud_transmision
         {
-          datosGenericos: ResidenceVerification::Rq::DatosGenericos.new(@rq_id, @titular).to_h,
+          datosGenericos: ResidenceVerification::Rq::DatosGenericos.new(@organization, @rq_id, @titular).to_h,
           # datosEspecificos: ResidenceVerification::Rq::DatosEspecificos.new(@titular).to_h,
           datosEspecificos: "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ns1:DatosEspecificos xmlns:ns1=\"http://intermediacion.redsara.es/scsp/esquemas/datosespecificos\"></ns1:DatosEspecificos>",
         }

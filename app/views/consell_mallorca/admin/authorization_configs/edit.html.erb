@@ -8,6 +8,16 @@
   <%= form_for @organization, url: consell_mallorca_admin_authorization_config_path, html: { class: 'form' } do |f| %>
     <%= f.text_field :pinbal_user %>
     <%= f.text_field :pinbal_pwd %>
+    <%= f.text_field :pinbal_solicitante_identificador_solicitante %>
+    <%= f.text_field :pinbal_solicitante_nombre_solicitante %>
+    <%= f.text_field :pinbal_solicitante_unidad_tramitadora %>
+    <%= f.text_field :pinbal_solicitante_cod_procedimiento %>
+    <%= f.text_field :pinbal_solicitante_nombre_procedimiento %>
+    <%= f.text_field :pinbal_solicitante_nombre_completo_funcionario %>
+    <%= f.text_field :pinbal_solicitante_nif_funcionario %>
+    <%= f.text_field :pinbal_solicitante_id_expediente %>
+    <%= f.text_field :pinbal_solicitante_finalidad %>
+    <%= f.text_field :pinbal_solicitante_consentimiento %>
     <%= f.submit t('.submit') %>
   <% end %>
   </div>

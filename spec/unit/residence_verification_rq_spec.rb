@@ -3,9 +3,19 @@
 require "rails_helper"
 
 describe "ResidenceVerification request" do
+  let!(:organization) { create(:organization,
+      pinbal_solicitante_identificador_solicitante: Rails.application.secrets.pinbal_solicitante_identificador_solicitante,
+      pinbal_solicitante_nombre_solicitante: Rails.application.secrets.pinbal_solicitante_nombre_solicitante,
+      pinbal_solicitante_unidad_tramitadora: Rails.application.secrets.pinbal_solicitante_unidad_tramitadora,
+      pinbal_solicitante_cod_procedimiento: Rails.application.secrets.pinbal_solicitante_cod_procedimiento,
+      pinbal_solicitante_nombre_procedimiento: Rails.application.secrets.pinbal_solicitante_nombre_procedimiento,
+      pinbal_solicitante_finalidad: Rails.application.secrets.pinbal_solicitante_finalidad,
+      pinbal_solicitante_consentimiento: Rails.application.secrets.pinbal_solicitante_consentimiento,
+    )}
+
   it "should produce the request msg" do
     tituar= ResidenceVerification::Rq::Titular.new(:dni, "10000322Z", "BLANCO")
-    rq= ResidenceVerification::Rq::DocumentBody.new(tituar).to_h
+    rq= ResidenceVerification::Rq::DocumentBody.new(organization, tituar).to_h
     expect(rq[:atributos][:idPeticion]).to start_with("SVDRWS01-")
     expect(rq[:atributos][:numElementos]).to eq("1")
     expect(rq[:atributos][:timeStamp]).to be_present

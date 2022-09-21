@@ -37,7 +37,7 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
   # -------------------------------------------------------------------------------
 
   def censed
-    client = ResidenceVerification::Client.new(organization.pinbal_user, organization.pinbal_pwd)
+    client = ResidenceVerification::Client.new(organization)
     begin
       rs_body= client.send_request(document_type, document_number, surname)
       if client.codigo_estado_respuesta != "0003"
