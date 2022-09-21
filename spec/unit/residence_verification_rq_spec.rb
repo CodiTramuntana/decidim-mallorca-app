@@ -34,13 +34,8 @@ describe "ResidenceVerification request" do
     expect(solicitud[:datosGenericos][:titular][:tipoDocumentacion]).to eq("DNI")
     expect(solicitud[:datosGenericos][:titular][:documentacion]).to eq("10000322Z")
     expect(solicitud[:datosGenericos][:titular][:apellido1]).to eq("BLANCO")
-    # expect(solicitud[:datosGenericos][:transmision][:codigoCertificado]).to eq("SVDDGPCIWS02")
-    # expect(solicitud[:datosGenericos][:transmision][:idSolicitud]).to start_with("SVDRWS01-")
 
     expect(solicitud[:datosEspecificos]).to eq("<?xml version=\"1.0\" encoding=\"UTF-8\"?><ns1:DatosEspecificos xmlns:ns1=\"http://intermediacion.redsara.es/scsp/esquemas/datosespecificos\"></ns1:DatosEspecificos>")
-    # expect(solicitud[:datosEspecificos][:espanol]).to eq("s")
-    # expect(solicitud[:datosEspecificos][:residencia][:provincia]).to eq("07")
-    # expect(solicitud[:datosEspecificos][:residencia][:municipio]).to eq("0027")
     puts rq.to_json
   end
 end
