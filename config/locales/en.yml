@@ -42,7 +42,7 @@ en:
       consell_mallorca_authorization_handler:
         document_types:
           nie: NIE
-          nif: NIF
+          dni: DNI
           passport: Passport
         explanation: Verify against the Consell de Mallorca census
         name: Illes Balears Census

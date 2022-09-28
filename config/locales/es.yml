@@ -44,7 +44,7 @@ es:
       consell_mallorca_authorization_handler:
         document_types:
           nie: NIE
-          nif: NIF
+          dni: DNI
           passport: Pasaporte
         explanation: Verifícate mediante el censo del Consell de Mallorca
         name: Censo Illes Balears

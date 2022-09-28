@@ -5,10 +5,10 @@ require "rails_helper"
 describe ConsellMallorcaAuthorizationHandler do
   let(:organization) { FactoryBot.create(:organization, pinbal_user: "test_municipality_user", pinbal_pwd: "son_moix") }
   let(:user) { FactoryBot.create(:user, organization: organization, nickname: "nickname") }
-  let(:nif) { "00000000T" }
+  let(:dni) { "00000000T" }
   let(:surname) { "BLANCO" }
   let(:handler) do
-    ConsellMallorcaAuthorizationHandler.new(user: user, document_type: :nif, document_number: nif, surname: surname)
+    ConsellMallorcaAuthorizationHandler.new(user: user, document_type: :dni, document_number: dni, surname: surname)
                               .with_context(current_organization: organization)
   end
 
@@ -25,7 +25,7 @@ describe ConsellMallorcaAuthorizationHandler do
 
   it "#unique_id" do
     encoded= Digest::SHA256.hexdigest(
-      "nif-#{nif}-test_municipality_user-#{Rails.application.secrets.secret_key_base}"
+      "dni-#{dni}-test_municipality_user-#{Rails.application.secrets.secret_key_base}"
     )
     expect(handler.unique_id).to eq(encoded)
   end

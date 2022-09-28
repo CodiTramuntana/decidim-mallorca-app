@@ -8,15 +8,14 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
   attribute :document_number, String
   attribute :surname, String
 
-  validates :document_type, inclusion: { in: [:nif, :nie, :passport] }, presence: true
+  validates :document_type, inclusion: { in: [:dni, :nie, :passport] }, presence: true
   validates :document_number, presence: true
   validate :censed
 
   # Helper method to be used in the form.
   # Returns the document types as options for select tags.
-  # As NIF and DNI are the same number, we only offer the NIF possibility.
   def census_document_types
-    [:nif, :nie, :passport].map do |type|
+    [:dni, :nie, :passport].map do |type|
       [
         I18n.t(type, scope: %w(decidim authorization_handlers
                                consell_mallorca_authorization_handler
