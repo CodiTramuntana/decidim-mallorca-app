@@ -32,9 +32,10 @@ module ResidenceVerification
     #------------------------------------------------------
 
     def invoke_endpoint(json_document)
-      conn = Faraday.new do |faraday|
-        faraday.request :authorization, "Basic", basic_auth_credentials
-        faraday.request :json
+      conn = Faraday.new do |conn|
+        conn.request :authorization, "Basic", basic_auth_credentials
+        conn.request :json
+        conn.options.timeout = 300 # seconds
       end
       rs = conn.post(Rails.application.secrets.pinbal_endpoint_url, json_document) do |conn|
         conn.headers = {
