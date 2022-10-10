@@ -12,6 +12,7 @@ gem "decidim-templates", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
 
 gem 'decidim-top_comments', git: 'https://github.com/gencat/participa.git', glob: 'decidim-top_comments/decidim-top_comments.gemspec'
+gem "decidim-age_action_authorization", git: "https://github.com/diputacioBCN/decidim-diba.git", glob: "decidim-age_action_authorization/*.gemspec"
 
 gem "bootsnap", "~> 1.3"
 
