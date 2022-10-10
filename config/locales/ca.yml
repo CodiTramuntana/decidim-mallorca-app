@@ -1,4 +1,53 @@
 ca:
+  activerecord:
+    attributes:
+      decidim/organization:
+        # This translation should have been added at Decidim 0.24
+        # if it's already there, remove it from here
+        admin_terms_of_use_body: Cos dels termes d'ús dels administradors
+        pinbal_pwd: Paraula clau de l'ajuntament a Pinbal (password)
+        pinbal_user: Codi d'usuari de l'ajuntament a Pinbal
+        pinbal_solicitante_identificador_solicitante: Identificador del solicitant
+        pinbal_solicitante_nombre_solicitante: Nom del solicitant
+        pinbal_solicitante_unidad_tramitadora: Unitat tramitadora
+        pinbal_solicitante_cod_procedimiento:  Codi del procediment
+        pinbal_solicitante_nombre_procedimiento: Nom del procediment
+        pinbal_solicitante_nombre_completo_funcionario: Nom del funcionari
+        pinbal_solicitante_nif_funcionario: NIF del funcionari
+        pinbal_solicitante_id_expediente: Identificador expedient
+        pinbal_solicitante_finalidad: Finalitat
+        pinbal_solicitante_consentimiento: Consentiment?
+  activemodel:
+    attributes:
+      consell_mallorca_authorization_handler:
+        document_type: Tipus de document
+        document_number: Número de document
+        surname: Primer cognom
+  consell_mallorca:
+    admin:
+      authorization_configs:
+        edit:
+          cancel: Cancel·la
+          submit: Envia
+          title: Configuració del Cens
+        update:
+          success: S'han desat correctament les dades per a integrar amb el sistema del padró
+  decidim:
+    consell_mallorca_authorization:
+      admin:
+        menu: Cens
+      errors:
+        messages:
+          not_censed: No formeu part del cens
+          rq_failed: La connexió amb el cens ha fallat
+    authorization_handlers:
+      consell_mallorca_authorization_handler:
+        document_types:
+          nie: NIE
+          dni: DNI
+          passport: Passaport
+        explanation: Verifica't mitjançant el cens del Consell de Mallorca
+        name: Cens Illes Balears
   forms:
     length_validator:
       # This translation should have been updated at Decidim 0.25

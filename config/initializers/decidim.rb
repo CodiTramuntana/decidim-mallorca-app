@@ -132,3 +132,16 @@ end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
+
+Decidim::Verifications.register_workflow(:consell_mallorca_authorization_handler) do |workflow|
+  workflow.form = "ConsellMallorcaAuthorizationHandler"
+end
+
+# Icons seems to be from: https://useiconic.com/open
+Decidim.menu :admin_menu do |menu|
+  menu.item I18n.t("menu", scope: "decidim.consell_mallorca_authorization.admin"),
+            Rails.application.routes.url_helpers.edit_consell_mallorca_admin_authorization_config_path,
+            icon_name: "wrench",
+            position: 7.5,
+            active: :inclusive
+end

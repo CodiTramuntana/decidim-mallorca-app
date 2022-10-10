@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_08_122163) do
+ActiveRecord::Schema.define(version: 2022_09_20_133734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -979,6 +979,19 @@ ActiveRecord::Schema.define(version: 2022_02_08_122163) do
     t.integer "comments_max_length", default: 1000
     t.jsonb "file_upload_settings"
     t.string "machine_translation_display_priority", default: "original", null: false
+    t.string "consell_mallorca_municipality_code"
+    t.string "pinbal_user"
+    t.string "pinbal_pwd"
+    t.string "pinbal_solicitante_identificador_solicitante"
+    t.string "pinbal_solicitante_nombre_solicitante"
+    t.string "pinbal_solicitante_unidad_tramitadora"
+    t.string "pinbal_solicitante_cod_procedimiento"
+    t.string "pinbal_solicitante_nombre_procedimiento"
+    t.string "pinbal_solicitante_nombre_completo_funcionario"
+    t.string "pinbal_solicitante_nif_funcionario"
+    t.string "pinbal_solicitante_id_expediente"
+    t.string "pinbal_solicitante_finalidad"
+    t.string "pinbal_solicitante_consentimiento"
     t.index ["host"], name: "index_decidim_organizations_on_host", unique: true
     t.index ["name"], name: "index_decidim_organizations_on_name", unique: true
   end
