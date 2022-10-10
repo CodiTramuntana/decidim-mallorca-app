@@ -7,6 +7,7 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
   attribute :document_type, Symbol
   attribute :document_number, String
   attribute :surname, String
+  attribute :birthdate, String
 
   validates :document_type, inclusion: { in: [:dni, :nie, :passport] }, presence: true
   validates :document_number, presence: true
@@ -31,6 +32,10 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
     )
   end
 
+  def metadata
+    {birthdate: birthdate}
+  end
+
   # -------------------------------------------------------------------------------
   private
   # -------------------------------------------------------------------------------
@@ -42,6 +47,9 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
       if client.codigo_estado_respuesta != "0003"
         Rails.logger.warn { "User is not censed. CodigoRespuesta was #{client.codigo_estado_respuesta}. RS: #{rs_body}" }
         errors.add(:base, I18n.t("decidim.consell_mallorca_authorization.errors.messages.not_censed"))
+      else
+        tmp= client.birthday
+        @birthdate= "#{tmp[0,4]}/#{tmp[4,2]}/#{tmp[6,2]}"
       end
     rescue Exception => e
       Rails.logger.error("Error: #{e.message}. Backtrace: #{e.backtrace.join("\n")}")

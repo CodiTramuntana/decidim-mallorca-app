@@ -32,7 +32,6 @@ ca:
           title: Configuració del Cens
         update:
           success: S'han desat correctament les dades per a integrar amb el sistema del padró
-    
   decidim:
     authorization_handlers:
       consell_mallorca_authorization_handler:

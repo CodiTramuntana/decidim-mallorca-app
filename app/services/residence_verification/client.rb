@@ -5,7 +5,9 @@
 module ResidenceVerification
   class Client
 
-    attr_reader :codigo_estado_respuesta, :client
+    BIRTHDATE_REGEXP= /<DatosNacimiento><Fecha>(\d{8})<\/Fecha>/
+
+    attr_reader :birthday, :client, :codigo_estado_respuesta
 
     # The Organization with the Pinbal user and password
     def initialize(organization)
@@ -21,6 +23,8 @@ module ResidenceVerification
       response = invoke_endpoint(document_body.to_json)
       json_response = JSON.parse(response.body)
       @codigo_estado_respuesta= json_response.dig("atributos", "estado", "codigoEstado")
+      json_response["transmisiones"]&.first&.fetch("datosEspecificos") =~ BIRTHDATE_REGEXP
+      @birthday= $1
       response.body
     rescue Exception => e
       Rails.logger.error "ERROR: ResidenceVerification request failed: #{e.message}::#{e.backtrace}"
