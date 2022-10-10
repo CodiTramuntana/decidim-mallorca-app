@@ -32,14 +32,8 @@ ca:
           title: Configuració del Cens
         update:
           success: S'han desat correctament les dades per a integrar amb el sistema del padró
+    
   decidim:
-    consell_mallorca_authorization:
-      admin:
-        menu: Cens
-      errors:
-        messages:
-          not_censed: No formeu part del cens
-          rq_failed: La connexió amb el cens ha fallat
     authorization_handlers:
       consell_mallorca_authorization_handler:
         document_types:
@@ -47,7 +41,17 @@ ca:
           dni: DNI
           passport: Passaport
         explanation: Verifica't mitjançant el cens del Consell de Mallorca
+        fields:
+          age: Edat mínima
+          max_age: Edat màxima
         name: Cens Illes Balears
+    consell_mallorca_authorization:
+      admin:
+        menu: Cens
+      errors:
+        messages:
+          not_censed: No formeu part del cens
+          rq_failed: La connexió amb el cens ha fallat
   forms:
     length_validator:
       # This translation should have been updated at Decidim 0.25
