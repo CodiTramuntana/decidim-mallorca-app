@@ -17,10 +17,7 @@ describe ConsellMallorcaAuthorizationHandler do
       to_return(status: 200, body: json_response, headers: {})
 
     expect(handler.valid?).to be true
-  end
-
-  it "do not generate metadata" do
-    expect(handler.metadata).to be_empty
+    expect(handler.birthdate).to eq("2002/09/05")
   end
 
   it "#unique_id" do
@@ -28,6 +25,11 @@ describe ConsellMallorcaAuthorizationHandler do
       "dni-#{dni}-test_municipality_user-#{Rails.application.secrets.secret_key_base}"
     )
     expect(handler.unique_id).to eq(encoded)
+  end
+
+  it "#metadata" do
+    handler.birthdate= "2000/01/02"
+    expect(handler.metadata).to eq({birthdate: "2000/01/02"})
   end
 
   def json_response

@@ -31,13 +31,6 @@ en:
         update:
           success: The datum to integrate with the residence registry has been successfully saved
   decidim:
-    consell_mallorca_authorization:
-      admin:
-        menu: Census
-      errors:
-        messages:
-          not_censed: You are not part of the census
-          rq_failed: The connection to the census has failed
     authorization_handlers:
       consell_mallorca_authorization_handler:
         document_types:
@@ -45,7 +38,17 @@ en:
           dni: DNI
           passport: Passport
         explanation: Verify against the Consell de Mallorca census
+        fields:
+          age: Minimum age
+          max_age: Maximum age
         name: Illes Balears Census
+    consell_mallorca_authorization:
+      admin:
+        menu: Census
+      errors:
+        messages:
+          not_censed: You are not part of the census
+          rq_failed: The connection to the census has failed
   footer:
     menus:
       citizen_participation:

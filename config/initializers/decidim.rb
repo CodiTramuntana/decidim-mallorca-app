@@ -135,6 +135,11 @@ Rails.application.config.i18n.default_locale = Decidim.default_locale
 
 Decidim::Verifications.register_workflow(:consell_mallorca_authorization_handler) do |workflow|
   workflow.form = "ConsellMallorcaAuthorizationHandler"
+  workflow.action_authorizer= "Decidim::AgeActionAuthorization::Authorizer"
+  workflow.options do |options|
+    options.attribute :age, type: :string, required: false
+    options.attribute :max_age, type: :string, required: false
+  end
 end
 
 # Icons seems to be from: https://useiconic.com/open

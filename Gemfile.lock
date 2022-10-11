@@ -211,6 +211,14 @@ GIT
       decidim-core (= 0.24.3)
 
 GIT
+  remote: https://github.com/diputacioBCN/decidim-diba.git
+  revision: fb26df2f732fa3300c7692fe2848cba755ef12e1
+  glob: decidim-age_action_authorization/*.gemspec
+  specs:
+    decidim-age_action_authorization (0.24.0)
+      decidim (>= 0.24.0)
+
+GIT
   remote: https://github.com/gencat/participa.git
   revision: 0bbfe1aae5744d7b27ba8c32143cf4069454f775
   glob: decidim-top_comments/decidim-top_comments.gemspec
@@ -889,6 +897,7 @@ DEPENDENCIES
   capistrano-yarn
   daemons
   decidim!
+  decidim-age_action_authorization!
   decidim-consultations!
   decidim-dev!
   decidim-templates!
@@ -908,7 +917,7 @@ DEPENDENCIES
   whenever
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 2.7.5p203
 
 BUNDLED WITH
    2.2.16
