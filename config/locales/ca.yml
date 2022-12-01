@@ -41,7 +41,8 @@ ca:
           passport: Passaport
         explanation: Verifica't mitjançant el cens del Consell de Mallorca
         fields:
-          age: Edat mínima
+          allowed_districts: Municipis permesos
+          min_age: Edat mínima
           max_age: Edat màxima
         name: Cens Illes Balears
     consell_mallorca_authorization:
