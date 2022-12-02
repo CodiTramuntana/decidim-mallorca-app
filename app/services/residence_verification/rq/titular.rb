@@ -3,15 +3,20 @@ module ResidenceVerification
     # Peticion/Solicitudes/SolicitudTransmision/DatosGenericos/Titular
     class Titular
       attr_reader :doc_type, :doc_number, :surname
+      # municipio is not used to generate the contents of the Titular,
+      # but to be carryed out for other classes to use it.
+      attr_accessor :municipio
 
       # Parameters:
       # - doc_type: One of: :nif, :dni, :passport, :nie
       # - doc_number: The document number
       # - surname: Primer apellido
-      def initialize(doc_type, doc_number, surname)
+      # - municipio: Municipality introduced by the citizen, optional.
+      def initialize(doc_type, doc_number, surname, municipio)
         @doc_type= doc_type
         @doc_number= doc_number
         @surname= surname
+        @municipio= municipio
       end
 
       def to_h

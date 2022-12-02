@@ -29,7 +29,7 @@ describe ConsellMallorcaAuthorizationHandler do
 
   it "#metadata" do
     handler.birthdate= "2000/01/02"
-    expect(handler.metadata).to eq({birthdate: "2000/01/02"})
+    expect(handler.metadata).to eq({birthdate: "2000/01/02", district: "001"})
   end
 
   def json_response

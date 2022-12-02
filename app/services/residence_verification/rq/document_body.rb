@@ -23,11 +23,28 @@ module ResidenceVerification
       #-----------------------------------
 
       def solicitud_transmision
+        solicitud= <<-EOEDE
+<ns1:Solicitud>
+  <ns1:Espanol>s</ns1:Espanol>
+  <ns1:Residencia>
+    <ns1:Provincia>07</ns1:Provincia>
+    <ns1:Municipio>#{municipio}</ns1:Municipio>
+  </ns1:Residencia>
+</ns1:Solicitud>
+EOEDE
+        datos_especificos= "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ns1:DatosEspecificos xmlns:ns1=\"http://intermediacion.redsara.es/scsp/esquemas/datosespecificos\">#{solicitud.delete(" \t\r\n")}</ns1:DatosEspecificos>"
         {
           datosGenericos: ResidenceVerification::Rq::DatosGenericos.new(@organization, @rq_id, @titular).to_h,
-          # datosEspecificos: ResidenceVerification::Rq::DatosEspecificos.new(@titular).to_h,
-          datosEspecificos: "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ns1:DatosEspecificos xmlns:ns1=\"http://intermediacion.redsara.es/scsp/esquemas/datosespecificos\"></ns1:DatosEspecificos>",
+          datosEspecificos: datos_especificos,
         }
+      end
+
+      def municipio
+        if @organization.pinbal_municipio.present?
+          @organization.pinbal_municipio
+        else
+          @titular.municipio
+        end
       end
     end
   end
