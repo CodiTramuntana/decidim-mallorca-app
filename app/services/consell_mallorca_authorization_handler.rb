@@ -34,7 +34,7 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
   end
 
   def metadata
-    {birthdate: birthdate}
+    {birthdate: birthdate, district: municipality}
   end
 
   # -------------------------------------------------------------------------------
