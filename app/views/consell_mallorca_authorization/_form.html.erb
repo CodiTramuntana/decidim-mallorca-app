@@ -9,5 +9,10 @@
 <div class="field">
   <%= form.text_field :surname %>
 </div>
+<% if handler.ask_municipality_to_citizen? %>
+<div class="field">
+  <%= form.text_field :surname %>
+</div>
+<% end %>
 
 <%= form.hidden_field :handler_name %>

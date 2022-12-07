@@ -8,6 +8,8 @@
   <%= form_for @organization, url: consell_mallorca_admin_authorization_config_path, html: { class: 'form' } do |f| %>
     <%= f.text_field :pinbal_user %>
     <%= f.text_field :pinbal_pwd %>
+    <%= pinball_municipio_select(f) %>
+    <p class="help-text"><%= t("activerecord.attributes.decidim/organization.pinbal_municipio_help") %></p>
     <%= f.text_field :pinbal_solicitante_identificador_solicitante %>
     <%= f.text_field :pinbal_solicitante_nombre_solicitante %>
     <%= f.text_field :pinbal_solicitante_unidad_tramitadora %>

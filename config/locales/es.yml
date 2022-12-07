@@ -17,6 +17,8 @@ es:
         pinbal_solicitante_id_expediente: Identificador expediente
         pinbal_solicitante_finalidad: Finalidad
         pinbal_solicitante_consentimiento: Consentimiento?
+        pinbal_municipio: Código de municipio
+        pinbal_municipio_help: Indique el código INE del municipio sólo si todos los participantes en la organización son del mismo municipio.
   activemodel:
     attributes:
       consell_mallorca_authorization_handler:

@@ -1,8 +1,6 @@
 module ConsellMallorca
   module Admin
     class AuthorizationConfigsController < Decidim::Admin::ApplicationController
-      helper_method :municipalities_options_for_select
-
       def edit
         enforce_permission_to :update, :organization
 
@@ -33,6 +31,7 @@ module ConsellMallorca
         params.require(:organization).permit(
           :pinbal_user,
           :pinbal_pwd,
+          :pinbal_municipio,
           :pinbal_solicitante_identificador_solicitante,
           :pinbal_solicitante_nombre_solicitante,
           :pinbal_solicitante_unidad_tramitadora,
@@ -44,10 +43,6 @@ module ConsellMallorca
           :pinbal_solicitante_finalidad,
           :pinbal_solicitante_consentimiento,
           )
-      end
-
-      def municipalities_options_for_select
-        ConsellMallorca::Authorization::Municipalities.all
       end
     end
   end
