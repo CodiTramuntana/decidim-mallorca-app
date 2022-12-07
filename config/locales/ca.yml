@@ -24,6 +24,7 @@ ca:
       consell_mallorca_authorization_handler:
         document_type: Tipus de document
         document_number: Número de document
+        pinbal_municipio: Municipi on estàs empadronat
         surname: Primer cognom
   consell_mallorca:
     admin:

@@ -22,6 +22,7 @@ en:
       consell_mallorca_authorization_handler:
         document_type: Document type
         document_number: Document number
+        pinbal_municipio: Municipality where you are censed
         surname: First surname
   consell_mallorca:
     admin:

@@ -8,10 +8,11 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
   attribute :document_number, String
   attribute :surname, String
   attribute :birthdate, String
-  attribute :municipality, String
+  attribute :pinbal_municipio, String
 
   validates :document_type, inclusion: { in: [:dni, :nie, :passport] }, presence: true
   validates :document_number, presence: true
+  validates :pinbal_municipio, presence: true#, if: -> { ask_municipality_to_citizen? }
   validate :censed
 
   # Helper method to be used in the form.
@@ -34,7 +35,11 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
   end
 
   def metadata
-    {birthdate: birthdate, district: municipality}
+    {birthdate: birthdate, district: pinbal_municipio}
+  end
+
+  def ask_municipality_to_citizen?
+    organization.pinbal_municipio.blank?
   end
 
   # -------------------------------------------------------------------------------
@@ -44,7 +49,7 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
   def censed
     client = ResidenceVerification::Client.new(organization)
     begin
-      rs_body= client.send_request(document_type, document_number, surname, municipality)
+      rs_body= client.send_request(document_type, document_number, surname, pinbal_municipio)
       if client.codigo_estado_respuesta != "0003"
         Rails.logger.warn { "User is not censed. CodigoRespuesta was #{client.codigo_estado_respuesta}. RS: #{rs_body}" }
         errors.add(:base, I18n.t("decidim.consell_mallorca_authorization.errors.messages.not_censed"))

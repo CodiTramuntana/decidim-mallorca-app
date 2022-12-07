@@ -2,8 +2,10 @@ require "csv"
 
 module ApplicationHelper
 
-  def pinball_municipio_select(f)
-    f.select :pinbal_municipio, options_for_municipio, { include_blank: true }
+  def pinbal_municipio_select(f, include_blank: true)
+    opts= {}
+    opts[:prompt]= "Selecciona el teu municipi" unless include_blank
+    f.select :pinbal_municipio, options_for_municipio, opts
   end
 
   def options_for_municipio

@@ -11,7 +11,7 @@
 </div>
 <% if handler.ask_municipality_to_citizen? %>
 <div class="field">
-  <%= form.text_field :surname %>
+  <%= pinbal_municipio_select(form, include_blank: false) %>
 </div>
 <% end %>
 
