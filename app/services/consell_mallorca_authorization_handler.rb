@@ -12,7 +12,7 @@ class ConsellMallorcaAuthorizationHandler < Decidim::AuthorizationHandler
 
   validates :document_type, inclusion: { in: [:dni, :nie, :passport] }, presence: true
   validates :document_number, presence: true
-  validates :pinbal_municipio, presence: true#, if: -> { ask_municipality_to_citizen? }
+  validates :pinbal_municipio, presence: true, if: -> { ask_municipality_to_citizen? }
   validate :censed
 
   # Helper method to be used in the form.
