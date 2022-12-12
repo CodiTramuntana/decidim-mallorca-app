@@ -48,6 +48,7 @@ ca:
           min_age: Edat mínima
           max_age: Edat màxima
         name: Cens Illes Balears
+        prompt: Selecciona el teu municipi
     consell_mallorca_authorization:
       admin:
         menu: Cens

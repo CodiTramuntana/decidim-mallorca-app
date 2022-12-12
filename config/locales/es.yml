@@ -48,6 +48,7 @@ es:
           min_age: Edad mínima
           max_age: Edad máxima
         name: Censo Illes Balears
+        prompt: Selecciona tu municipio
     consell_mallorca_authorization:
       admin:
         menu: Censo

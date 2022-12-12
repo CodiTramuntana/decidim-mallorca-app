@@ -4,7 +4,7 @@ module ApplicationHelper
 
   def pinbal_municipio_select(f, include_blank: true)
     opts= {}
-    opts[:prompt]= "Selecciona el teu municipi" unless include_blank
+    opts[:prompt]= t("decidim.authorization_handlers.consell_mallorca_authorization_handler.prompt") unless include_blank
     f.select :pinbal_municipio, options_for_municipio, opts
   end
 
