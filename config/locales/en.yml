@@ -42,7 +42,7 @@ en:
           passport: Passport
         explanation: Verify against the Consell de Mallorca census
         fields:
-          allowed_districts: Allowed districts
+          allowed_districts: Allowed municipalities (colon separated INE codes)
           min_age: Minimum age
           max_age: Maximum age
         name: Illes Balears Census
