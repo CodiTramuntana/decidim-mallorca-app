@@ -15,11 +15,14 @@ en:
         pinbal_solicitante_id_expediente: File identifier
         pinbal_solicitante_finalidad: Finality
         pinbal_solicitante_consentimiento: Consent?
+        pinbal_municipio: Municipality code
+        pinbal_municipio_help: Set the INE code for the municipality only if all the participants in the organization belong to the same municipality.
   activemodel:
     attributes:
       consell_mallorca_authorization_handler:
         document_type: Document type
         document_number: Document number
+        pinbal_municipio: Municipality where you are censed
         surname: First surname
   consell_mallorca:
     admin:
@@ -39,9 +42,11 @@ en:
           passport: Passport
         explanation: Verify against the Consell de Mallorca census
         fields:
-          age: Minimum age
+          allowed_districts: Allowed municipalities (colon separated INE codes)
+          min_age: Minimum age
           max_age: Maximum age
         name: Illes Balears Census
+        prompt: Select your municipality
     consell_mallorca_authorization:
       admin:
         menu: Census

@@ -16,8 +16,8 @@ module ResidenceVerification
       @password = @organization.pinbal_pwd
     end
 
-    def send_request(document_type, document_number, surname)
-      tituar= ResidenceVerification::Rq::Titular.new(document_type.to_sym, document_number, surname)
+    def send_request(document_type, document_number, surname, municipio)
+      tituar= ResidenceVerification::Rq::Titular.new(document_type.to_sym, document_number, surname, municipio)
       document_body= ResidenceVerification::Rq::DocumentBody.new(@organization, tituar).to_h
 
       response = invoke_endpoint(document_body.to_json)

@@ -7,8 +7,9 @@ describe ConsellMallorcaAuthorizationHandler do
   let(:user) { FactoryBot.create(:user, organization: organization, nickname: "nickname") }
   let(:dni) { "00000000T" }
   let(:surname) { "BLANCO" }
+  let(:pinbal_municipio) { "123" }
   let(:handler) do
-    ConsellMallorcaAuthorizationHandler.new(user: user, document_type: :dni, document_number: dni, surname: surname)
+    ConsellMallorcaAuthorizationHandler.new(user: user, document_type: :dni, document_number: dni, surname: surname, pinbal_municipio: pinbal_municipio)
                               .with_context(current_organization: organization)
   end
 
@@ -29,7 +30,23 @@ describe ConsellMallorcaAuthorizationHandler do
 
   it "#metadata" do
     handler.birthdate= "2000/01/02"
-    expect(handler.metadata).to eq({birthdate: "2000/01/02"})
+    expect(handler.metadata).to eq({birthdate: "2000/01/02", district: "123"})
+  end
+
+  describe "#ask_municipality_to_citizen?" do
+    subject { handler.ask_municipality_to_citizen? }
+
+    context "when it is set in the organization" do
+      before do
+        organization.update(pinbal_municipio: "001")
+      end
+
+      it { is_expected.to be false }
+    end
+
+    context "when it is not set in the organization" do
+      it { is_expected.to be true }
+    end
   end
 
   def json_response
@@ -77,7 +94,7 @@ describe ConsellMallorcaAuthorizationHandler do
         "fechaGeneracion":"2022-08-09T16:41:04.396+02:00"
       }
     },
-    "datosEspecificos":"<DatosEspecificos><Retorno><Estado><CodigoEstado>00</CodigoEstado><LiteralError>INFORMACION CORRECTA</LiteralError></Estado><DatosTitular><Nombre>MANUELA</Nombre><Apellido1>BLANCO</Apellido1><Apellido2>VIDAL</Apellido2><Nacionalidad>ESPAÿA-ESP</Nacionalidad><Sexo>F</Sexo><DatosNacimiento><Fecha>20020905</Fecha><Localidad>VIGO</Localidad><Provincia>PONTEVEDRA</Provincia></DatosNacimiento><NombreMadre>JULIA</NombreMadre><FechaCaducidad>20070701</FechaCaducidad></DatosTitular></Retorno></DatosEspecificos>"}
+    "datosEspecificos":"<DatosEspecificos><Retorno><Estado><CodigoEstado>0003</CodigoEstado><LiteralError>Verificacion positiva. Ámbito Territorial de Residencia Correcto.</LiteralError></Estado><DatosTitular><Nombre>MANUELA</Nombre><Apellido1>BLANCO</Apellido1><Apellido2>VIDAL</Apellido2><Nacionalidad>ESPAÿA-ESP</Nacionalidad><Sexo>F</Sexo><DatosNacimiento><Fecha>20020905</Fecha><Localidad>VIGO</Localidad><Provincia>PONTEVEDRA</Provincia></DatosNacimiento><NombreMadre>JULIA</NombreMadre><FechaCaducidad>20070701</FechaCaducidad></DatosTitular></Retorno></DatosEspecificos>"}
   ]
 }
 EOJSON

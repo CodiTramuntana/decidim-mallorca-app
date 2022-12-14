@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
 Decidim.configure do |config|
-  config.application_name = "My Application Name"
-  config.mailer_sender = "change-me@domain.org"
+  config.application_name = 'My Application Name'
+  config.mailer_sender = 'change-me@domain.org'
 
   # Change these lines to set your preferred locales
   config.default_locale = :en
-  config.available_locales = [:en, :ca, :es]
+  config.available_locales = %i[en ca es]
 
   # Geocoder configuration
   config.maps = {
     provider: :here,
     api_key: Rails.application.secrets.maps[:api_key],
     static: {
-      url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview"
+      url: 'https://image.maps.ls.hereapi.com/mia/1.6/mapview'
     }
   }
   config.geocoder = {
@@ -134,19 +134,20 @@ Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
 
 Decidim::Verifications.register_workflow(:consell_mallorca_authorization_handler) do |workflow|
-  workflow.form = "ConsellMallorcaAuthorizationHandler"
-  workflow.action_authorizer= "Decidim::AgeActionAuthorization::Authorizer"
+  workflow.form = 'ConsellMallorcaAuthorizationHandler'
+  workflow.action_authorizer = 'Decidim::AgeAndDistrictActionAuthorization::Authorizer'
   workflow.options do |options|
-    options.attribute :age, type: :string, required: false
+    options.attribute :min_age, type: :string, required: false
     options.attribute :max_age, type: :string, required: false
+    options.attribute :allowed_districts, type: :string, required: false
   end
 end
 
 # Icons seems to be from: https://useiconic.com/open
 Decidim.menu :admin_menu do |menu|
-  menu.item I18n.t("menu", scope: "decidim.consell_mallorca_authorization.admin"),
+  menu.item I18n.t('menu', scope: 'decidim.consell_mallorca_authorization.admin'),
             Rails.application.routes.url_helpers.edit_consell_mallorca_admin_authorization_config_path,
-            icon_name: "wrench",
+            icon_name: 'wrench',
             position: 7.5,
             active: :inclusive
 end

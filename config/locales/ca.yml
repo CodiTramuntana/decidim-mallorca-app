@@ -17,11 +17,14 @@ ca:
         pinbal_solicitante_id_expediente: Identificador expedient
         pinbal_solicitante_finalidad: Finalitat
         pinbal_solicitante_consentimiento: Consentiment?
+        pinbal_municipio: Codi de municipi
+        pinbal_municipio_help: Només si tots els participants de l'organització són del mateix municipi, indiqueu el codi INE del municipi.
   activemodel:
     attributes:
       consell_mallorca_authorization_handler:
         document_type: Tipus de document
         document_number: Número de document
+        pinbal_municipio: Municipi on estàs empadronat
         surname: Primer cognom
   consell_mallorca:
     admin:
@@ -41,9 +44,11 @@ ca:
           passport: Passaport
         explanation: Verifica't mitjançant el cens del Consell de Mallorca
         fields:
-          age: Edat mínima
+          allowed_districts: Municipis permesos (codis INE separats per comes)
+          min_age: Edat mínima
           max_age: Edat màxima
         name: Cens Illes Balears
+        prompt: Selecciona el teu municipi
     consell_mallorca_authorization:
       admin:
         menu: Cens
